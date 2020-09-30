@@ -6,3 +6,15 @@
 # anar emmagatzemant paraules i anar imprimint per eixida
 # la quantitat d'ocurrències de cada paraula, ordenades per
 # nombre d'ocurrències decrecreixent
+
+if [ ! $1 ]
+then echo "Cal passar fitxer com a argument"
+else
+  head -10 $1 | while read linea
+  do
+    for paraula in $linea
+    do
+      echo $paraula
+    done
+  done
+fi
