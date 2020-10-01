@@ -16,5 +16,5 @@ else
     do
       echo $paraula
     done
-  done
+  done | tr ['\.',-: [" " 
 fi
