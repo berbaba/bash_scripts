@@ -10,11 +10,11 @@
 if [ ! $1 ]
 then echo "Cal passar fitxer com a argument"
 else
-  head -10 $1 | while read linea
+  cat $1 | while read linea
   do
     for paraula in $linea
     do
       echo $paraula
     done
-  done | tr ['\.',-: [" " 
+  done | tr ['\.''\,''\-''\:''\/'" " [" " | tr [A-Z] [a-z] | sort | uniq -c | sort -nr
 fi
