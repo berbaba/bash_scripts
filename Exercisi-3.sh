@@ -7,6 +7,8 @@
 # la quantitat d'ocurrències de cada paraula, ordenades per
 # nombre d'ocurrències decrecreixent
 
+#Sugerencia: se sugiere utilizar un vector indexado por cadenas para llevar la cuenta de las ocurrencias de cada palabra.
+
 if [ ! $1 ]
 then echo "Cal passar fitxer com a argument"
 else
@@ -16,5 +18,6 @@ else
     do
       echo $paraula
     done
-  done | tr ['\.''\,''\-''\:''\/'" " [" " | tr [A-Z] [a-z] | sort | uniq -c | sort -nr
+  done | tr ['\.''\,''\-''\:'" "'¡''!''¿''?''('')''\;''\[''\]' [" " |
+   tr [A-Z] [a-z] | tr [ÁÉÍÓÚ'\/'] [áéíóú"\\n"] |  sort | uniq -c | sort -nr 
 fi
