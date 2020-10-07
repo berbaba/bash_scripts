@@ -14,8 +14,10 @@ echo "Processos totals: "$tot_proc
 usu=`ps aux | cut -f 1 -d " " | sort | uniq`  # All process users
 echo "Usuaris: " $usu
 
-for us in $usu
-do
-  echo $us
-done
-# echo `ps aux | grep $us | cut -f 1 -d " "`
+# for us in $usu
+# do
+#   echo $us
+# done
+
+# col 3 cpu, col 4 mem
+ps -eo euser,pcpu
